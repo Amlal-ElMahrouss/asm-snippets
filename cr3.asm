@@ -1,0 +1,6 @@
+[GLOBAL __CR3]
+
+SECTION .TEXT
+__CR3:
+	MOV RAX, CR3
+	RET

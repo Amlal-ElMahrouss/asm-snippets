@@ -1,0 +1,19 @@
+[BITS 64]
+[GLOBAL __CR0_OR]
+[GLOBAL __CR0_AND]
+
+SECTION .TEXT
+__CR0_AND:
+	MOV RCX, CR0
+	AND RCX, [RDI]
+	MOV CR0, RCX
+	RET
+
+
+__CR0_OR:
+        MOV RCX, CR0
+        OR RCX, [RDI]
+        MOV CR0, RCX
+
+        RET
+

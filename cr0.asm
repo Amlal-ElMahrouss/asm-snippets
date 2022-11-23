@@ -1,0 +1,26 @@
+[BITS 32]
+[GLOBAL __CR0_OR]
+[GLOBAL __CR0_AND]
+
+SECTION .TEXT
+__CR0_AND:
+	PUSH EBP
+
+	MOV EAX, CR0
+	AND EAX, [EBP-4]
+	MOV CR0, EAX
+
+	POP EBP
+	RET
+
+
+__CR0_OR:
+        PUSH EBP
+
+        MOV EAX, CR0
+        OR EAX, [EBP-4]
+        MOV CR0, EAX
+
+        POP EBP
+        RET
+
